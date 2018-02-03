@@ -1,6 +1,6 @@
 package com.example.divyanshu.maps;
 
-import android.Manifest;
+import android.Manifest;;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
