@@ -1,5 +1,6 @@
 package com.example.divyanshu.maps;
 //No edit but just this comment is added
+
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.location.Address;
@@ -34,10 +35,10 @@ import java.io.IOException;
 import java.util.List;
 
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback,
-        GoogleApiClient.ConnectionCallbacks,
-        GoogleApiClient.OnConnectionFailedListener,
-        LocationListener {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback/*done*/,
+        GoogleApiClient.ConnectionCallbacks/*done*/,
+        GoogleApiClient.OnConnectionFailedListener/*done*/,
+        LocationListener/*done*/ {
 
     private GoogleMap mMap;
     private GoogleApiClient client;
@@ -118,9 +119,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             {
                 Geocoder geocoder=new Geocoder(this);
                 try {
-                    addressList = geocoder.getFromLocationName(location,5);
+                    addressList = geocoder.getFromLocationName(location,5);//search loaction using the string entered by user limit of location list = 5
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    e.printStackTrace();//nothing happens in gui when i search pillun (a random entry in search bar to check what happens if no places fount with
+                                        //the name
                 }
 
                 for(int i=0;i<addressList.size();i++)
@@ -129,7 +131,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     LatLng latlng = new LatLng(myAddress.getLatitude(),myAddress.getLongitude());
                     mo.position(latlng);
                     mo.title("My search result");
-                    mMap.addMarker(mo);
+                    mMap.addMarker(mo);//Marker is now added on map
                     mMap.animateCamera(CameraUpdateFactory.newLatLng(latlng));
                 }
             }
